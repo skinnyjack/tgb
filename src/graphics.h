@@ -22,9 +22,10 @@ void putpixel(int x, int y, unsigned char fcolor, unsigned char bcolor, char c){
 }
 
 void clearscreen(unsigned char clearcolor,int w,int h){
-  for(int i = 0; i < w*h+1; i++){
-    putpixel((i%w)+1, i/w+1,clearcolor, clearcolor, ' ');
-  }
+  printf("\e[2J");
+  //for(int i = 0; i < w*h+1; i++){
+  //  putpixel((i%w)+1, i/w+1,clearcolor, clearcolor, ' ');
+  //}
 }
 
 void flush_scr(int x, int y){
