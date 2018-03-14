@@ -1,27 +1,13 @@
 #include <cstdio>
 #include <cstdlib>
 #include <string>
+#include <iostream>
 #include "src/keyboard.h"
 #include "src/graphics.h"
-#include "Map.h"
-
+#include "src/Rng.h";
 
 #define MAP_W 120
 #define MAP_H 60
-
-int roll(int beg, int end) {
-    return rand()%(end-beg + 1) + beg;
-}
-
-int dice(char *str) {
-    int count = 0;
-    int edges = 0;
-    
-    sscanf(str,"%dd%d", &count, &edges);
-    printf("%d %d\n", count, edges);
-    return 4;
-}
-
 
 unsigned char MAP[MAP_W][MAP_H];
 
@@ -112,6 +98,8 @@ void drawMap(){
 
 int main() {
     //srand(0xDEADFACE);
+    Rng rng;
+    
     srand(time(NULL));
     //Map m;
     //m.generate(0xDEADFACE);

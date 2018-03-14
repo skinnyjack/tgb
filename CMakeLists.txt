@@ -1,6 +1,5 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
-PROJECT(consolestein)
-
-file(GLOB SOURCES "src/*.cpp")
-ADD_EXECUTABLE(run ${SOURCES})
-target_link_libraries(run m)
+cmake_minimum_required (VERSION 3.0)
+project (tgb)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++11 -W -Wall -pedantic")
+file(GLOB SOURCES "*.cpp" "src/*.cpp")
+add_executable(${PROJECT_NAME} ${SOURCES})
